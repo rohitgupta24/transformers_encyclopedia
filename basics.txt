@@ -1,0 +1,29 @@
+What are Neural Networks ?
+NN are very effective models to analyze complicated datatypes like images, text, audio, video. 
+Explain Weights ? 
+Explain Neurons ?
+How it is different from Machine Learning ?
+
+What are Transformers ?
+A type of NN architecture.
+
+
+Why Transformers were even needed ?
+Initially we used RNNs for text data. Couldn't be parallelized as they do translation sequentially.
+Transformers can scale well and use plenty of GPUs to perform the tasks. Originally it was designed for Translation.They had done 3 special things :
+        1.Positional Encoding : Instead of feeding word sequentiallly, slap a number on the word and feed it. Store the word order
+                                into the word itself instead of doing it into the model. 
+                                Train such data and model will understand the importance of word order.
+        2.Attention : With the image, we can understand that on which word, model is giving importance while doing the translation for 
+                      a particular word. And how should a model know to look to give more attention(importance) to which word, 
+                      architecture has learned this by getting trained on tons of data. Attention was invented before this paper.
+        3.Self-Attention : It's a twist in Attention. What if allow the model to know the underlying meaning of the input ?
+                           It has been trained on tons of data that now model knows about the rules of grammar, language.
+                           For this, models check the context by using surrounding words. 
+
+
+Describe ChatGPT ?
+ChatGPT = GPT + Reinforcement Learning, GPT = LLM + Transformers(seq to seq architecture with Encoders(Simulataneous Input) & Decoders(Sequential Output))
+Language Models (Q&A, Summarize, Translate) have inherent capability to understand words and sentences, 
+It understands probability sequence of distribution of words.
+
