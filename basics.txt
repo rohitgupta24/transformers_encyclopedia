@@ -9,6 +9,11 @@ A type of NN architecture.
 
 
 Why Transformers were even needed ?
+Attention was there always but allowing it to be worked parallely which helped in scaling up really produced the difference.
+-Scale Efficiently
+-Parallel processes
+-Attention to Input meaning
+
 Initially we used RNNs for text data. Couldn't be parallelized as they do translation sequentially.
 Transformers can scale well and use plenty of GPUs to perform the tasks. Originally it was designed for Translation.They had done 3 special things :
         1.Positional Encoding : Instead of feeding word sequentiallly, slap a number on the word and feed it. Store the word order
@@ -27,3 +32,40 @@ ChatGPT = GPT + Reinforcement Learning, GPT = LLM + Transformers(seq to seq arch
 Language Models (Q&A, Summarize, Translate) have inherent capability to understand words and sentences, 
 It understands probability sequence of distribution of words.
 
+
+Foundation LLMs Models : BERT(smallest), GPT, LLaMA, BLOOM, FLAN-T5, PaLM. They take human written instructions(natural language or prompt) 
+                         and perform tasks. Space that is available to the prompt is called the Context Window.
+
+                         Output of model is called Completion. Act of using the model to generate text is called Inference.
+
+                         Summary, Translation, Translation to Machine Code, Next Word Prediction, Information Retrieval(NER),
+                         Connect LLMs to external API and do power interaction like, Is my Flight late?
+
+                         The scale of foundation models grows from hundreds of millions of parameters to billions, even hundreds of billions, 
+                         the subjective understanding of language that a model possesses also increases. This language understanding stored within the 
+                         parameters of the model is what processes, reasons, and ultimately solves the tasks you give it, but it's also true that smaller 
+                         models can be fine tuned to perform well on specific focused tasks.
+
+Generating text is not New, RNNs were used for this. But with few words, prediction is hard,
+If we increase the word than memory requirements increase exponentially. And even after that prediction is wrong as model needs more Information
+to predict.
+-- Homonyms
+-- Syntactic Ambiguity (The teacher taught the student with the book)
+
+The transformer architecture : This novel approach unlocked the progress in generative AI that we see today. 
+It can be scaled efficiently to use multi-core GPUs, it can parallel process input data, making use of much larger 
+training datasets, and crucially, it's able to learn to pay attention to the meaning of the words it's processing.
+
+Learn the relevance and the context of every word.Attention Map illustartes the attention weights between each word.
+ML models are just big statistical Calculators and they work with numbers not words.
+
+Describe Tokenizer? Embedding ? Tokenizer should be same while generating text.
+
+Each word has a token id and every token is mapped to a Vector. Original Paper : Vector Size = 512, if VS = 3, than word can be plot 
+in 3d space and angle b/w words will define the relationship mathematically.  
+
+Token Vectors + Positional Encoding = VEctors which is passed to Self Attention Layer.
+Multi-Headed Attention : The number of attention heads included in the attention layer varies from model to model, but numbers in the range of 12-100 are common. 
+The intuition here is that each self-attention head will learn a different aspect of language.
+
+Softmax Layer : One single token will have higher probability score than the rest and that token(word) is chosen.
